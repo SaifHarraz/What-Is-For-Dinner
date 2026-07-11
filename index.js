@@ -432,7 +432,8 @@ function renderRecipe(randomRecipe) {
         </div>
       </div>
 
-      <div class="prep-notice d-flex gap-3 align-items-start rounded-2 p-3 mt-4 border border-danger-subtle">
+  ${(function(){if(randomRecipe.prepTime+randomRecipe.cookTime>=45){
+    return `<div class="prep-notice d-flex gap-3 align-items-start rounded-2 p-3 mt-4 border border-danger-subtle">
         <i class="fa-solid fa-triangle-exclamation fs-5"></i>
         <div>
           <strong class="d-block">Extended Preparation Time</strong>
@@ -440,7 +441,8 @@ function renderRecipe(randomRecipe) {
             This recipe requires more than 45 minutes to prepare. Plan accordingly!
           </p>
         </div>
-      </div>
+      </div>`
+    }})()}
 
       <ul class="nav recipe-tabs mt-4 flex-nowrap p-3 border-1" role="tablist">
         <li class="nav-item flex-fill">
